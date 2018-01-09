@@ -1,7 +1,7 @@
 #include <iostream>
 #include "memPoolApi.h"
 using namespace std;
-
+/* test memory pool */
 int main()
 {
 	apl_createMemPool(5*1024*1024);
