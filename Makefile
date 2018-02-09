@@ -4,13 +4,13 @@ ARFLAG = -rcs
 # 静态库链接成.so动态库，编译静态库的时候需要加 -fPIC这个参数。
 CFLAGS = -g -fPIC
 CLIBS = -lpthread -lrt
-SUBDIRS = ./memoryPool ./autoLock 
+SUBDIRS = ./memoryPoolUtil ./autoLock 
 
 #指定头文件目录，代码中就不需要把头文件的完整路径写出来了
-INCLUDE_DIRS = -I./include -I./memoryPool -I./autoLock
+INCLUDE_DIRS = -I./include -I./memoryPoolUtil -I./autoLock
 OBJECTS = memPoolApi.o
 
-SUB_SOURCES = $(wildcard ./memoryPool/*.cpp ./autoLock/*.cpp)
+SUB_SOURCES = $(wildcard ./memoryPoolUtil/*.cpp ./autoLock/*.cpp)
 OBJECTS += $(patsubst %.cpp, %.o, $(SUB_SOURCES))
 
 export XX CFLAGS AR ARFLAG
