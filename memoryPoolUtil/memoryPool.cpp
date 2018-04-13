@@ -563,12 +563,15 @@ void MemoryManage::FreeSmlMemory(void *addr)
 
 void innerCreateMemPool()
 {
+	if(pMemPoolInstance) return;
 	pMemPoolInstance = new MemoryManage();
+	return;
 }
 
 void innerDeleteMemPool()
 {
 	delete pMemPoolInstance;
+	return;
 }
 
 MemoryManage* const innerGetMemPool()

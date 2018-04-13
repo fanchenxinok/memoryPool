@@ -30,8 +30,10 @@ void* apl_malloc(size_t size)
 
 void apl_free(void* addr)
 {
-       MemoryManage* const mm_instance = innerGetMemPool();
-	mm_instance->Free(addr);
+    MemoryManage* const mm_instance = innerGetMemPool();
+	if(mm_instance != NULL){
+		mm_instance->Free(addr);
+	}
 	return;
 }
 
