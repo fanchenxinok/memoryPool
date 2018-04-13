@@ -571,6 +571,7 @@ void innerCreateMemPool()
 void innerDeleteMemPool()
 {
 	delete pMemPoolInstance;
+	pMemPoolInstance = NULL;
 	return;
 }
 
